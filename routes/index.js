@@ -1,4 +1,5 @@
-const express = require('require');
+// const { route } = require('express/lib/application');
+const express = require('express');
 
 const router = express.Router();
 const homeController = require('../controller/home_controller')
@@ -6,5 +7,6 @@ const homeController = require('../controller/home_controller')
 console.log("router loaded")
 
 router.get('/', homeController.home)
+router.use('/users', require("./users"))
 
 module.exports = router;
