@@ -1,10 +1,16 @@
 const { application } = require('express');
+const cookieParser = require('cookie-parser');
 const express = require('express');
 const app = express(); //define app
 const port = 8000; // define port by default the app runs on port 80
 const expressLayouts = require('express-ejs-layouts');
 const db = require('./config/mongoose');
 
+
+app.use(express.urlencoded());
+
+//set up cookie parser 
+app.use(cookieParser());
 
 app.use(express.static('./assets'));
 // telling brower to use the express-ejs-layout library 
